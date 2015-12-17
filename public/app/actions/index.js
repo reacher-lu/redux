@@ -1,7 +1,6 @@
 import { TITLE_BLUR, TITLE_KEYDOWN,TITLE_BAR } from '../constants/actionTypes'
 
 export function titleBlur(pageTitle) {
-    console.log('xx');
     return {
         type: TITLE_BLUR,
         pageTitle
