@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node server.js",
     "debug": "DEBUG=true node server.js",
-    "dev": "webpack --config webpack.config.min.js",
+    "dev": "webpack --config webpack.config.js",
     "lint": "eslint public/app"
   },
   "author": "",
@@ -24,6 +24,7 @@
     "eslint-loader": "^1.1.0",
     "eslint-plugin-react": "^2.3.0",
     "express": "^4.13.3",
+    "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
     "react-hot-loader": "^1.3.0",
     "react-transform-catch-errors": "^1.0.0",
