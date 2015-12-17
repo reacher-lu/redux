@@ -1,7 +1,9 @@
 import keyMirror from 'fbjs/lib/keyMirror'
 
 export default keyMirror({
-	TITLE_BLUR:null,
-	TITLE_KEYDOWN:null,
+    ADD_ITEM: null,
+    DELETE_ITEM: null,
+    DELETE_ALL: null,
+    FILTER_ITEM: null,
     TITLE_BAR: null
 })
