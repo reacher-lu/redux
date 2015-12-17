@@ -1,4 +1,4 @@
-import { TITLE_BLUR, TITLE_KEYDOWN,TITLE_BAR } from '../constants/actionTypes'
+import { TITLE_BLUR, TITLE_KEYDOWN, TITLE_BAR } from '../constants/actionTypes'
 
 export function titleBlur(pageTitle) {
     return {
@@ -21,4 +21,12 @@ export function titleBar(e,x) {
         type: TITLE_BAR,
         inputValue
     }
+}
+
+export function addToCart(productId) {
+  return (dispatch, getState) => {
+    if (getState().products.byId[productId].inventory > 0) {
+      dispatch(addToCartUnsafe(productId))
+    }
+  }
 }

@@ -5,9 +5,8 @@ import ImmutableRenderMixin from 'react-immutable-render-mixin'
 import * as ItemsActions from '../actions'
 import { bindActionCreators } from 'redux'
 
-import _products from './pageData.json'
-
-console.log('_products',_products);
+var json = require("json!./pageData.json");
+console.log('_products',json);
 
 // const url = 'mock/pageData.json';
 // fetch(url).then(response => response.json())

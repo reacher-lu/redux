@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import ReactDom from 'react-dom'
 import { tools } from '../utils'
 import ImmutableRenderMixin from 'react-immutable-render-mixin'
 
@@ -7,16 +8,23 @@ console.log(tools);
 
 class TitleBar extends Component {
 
+    maxLength = 20
+
     mixins = [ImmutableRenderMixin]
 
     handleBlur (titleBlur,e) {
         let val = e.target.value.trim()
-        console.log('111',val)
+        // console.log('111',val,ReactDom.findDOMNode(this.refs.titleRemind))
         titleBlur(val)
+        if(val.length>=this.maxLength) this.refs.titleRemind.innerHTML = '标题不超过20字'
     }
 
     handleKeyDown (e) {
         console.log(e.target.value)
+    }
+
+    handleSubmit () {
+        
     }
 
     render () {
@@ -25,8 +33,8 @@ class TitleBar extends Component {
         return (
             <div>
                 <h1 className="" onClick={titleBar.bind(this)}>{pageTitle}</h1>
-                <input onBlur={this.handleBlur.bind(this,titleBlur)} onKeyDown={this.handleKeyDown} defaultValue={pageTitle} placeholder="请输入页面标题" refs="input" className="title" />
-                <span refs="titleRemind" className="title-remind"></span>
+                <input onBlur={this.handleBlur.bind(this,titleBlur)} onKeyDown={this.handleKeyDown} defaultValue={pageTitle} placeholder="请输入页面标题" ref="input" className="title" />
+                <span ref="titleRemind" className="title-remind"></span>
             	<button className="">提交</button>
             </div>
         )

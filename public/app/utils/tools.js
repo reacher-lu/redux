@@ -9,10 +9,10 @@ tools.clip = ($input,$text,maxLength,callbackFn) => {
 
     let curr = maxChars - inputValue.length
 
-    $text.innerHTML = inputValue.length.toString()
+    if($text) $text.innerHTML = inputValue.length.toString()
 
     callbackFn && callbackFn(inputValue)
-    
+
     return inputValue
 }
 
