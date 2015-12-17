@@ -1,18 +1,25 @@
 import Immutable from 'immutable'
-import { TITLE_BLUR,TITLE_BAR } from '../constants/actionTypes'
+import { TITLE_BLUR,TITLE_BAR,TITLE_CHANGE } from '../constants/actionTypes'
 
-const initialFilterItem = Immutable.Map({
-	pageTitle : 2222
+const initialState = Immutable.fromJS({
+    pageTitle: 'Use Redux',
+    completed: false,
+    id: 0
 })
 
-export default function titles(state = initialFilterItem, action) {
+export default function titles(state = initialState, action) {
+    console.log(state);
     switch(action.type) {
+        case TITLE_CHANGE:
+            console.log('action',action)
+            console.log('state',state)
+            return state.set('pageTitle',action.pageTitle)
         case TITLE_BAR:
-            return action.inputValue
+            return state
         case TITLE_BLUR:
             console.log('action',action)
             console.log('state',state)
-            return state.set('pageTitle', action.pageTitle)
+            return state.set('pageTitle',action.pageTitle)
         default:
             return state
     }

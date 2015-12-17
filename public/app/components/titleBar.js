@@ -24,18 +24,19 @@ class TitleBar extends Component {
     }
 
     handleSubmit () {
-        
+        let val = this.refs.input.value.trim()
+        titleChange(val)
     }
 
     render () {
     	console.log('props',this.props)
-        const { titleBlur,titleBar,pageTitle } = this.props
+        const { titleBlur,titleBar,pageTitle,titleChange } = this.props
         return (
             <div>
                 <h1 className="" onClick={titleBar.bind(this)}>{pageTitle}</h1>
                 <input onBlur={this.handleBlur.bind(this,titleBlur)} onKeyDown={this.handleKeyDown} defaultValue={pageTitle} placeholder="请输入页面标题" ref="input" className="title" />
                 <span ref="titleRemind" className="title-remind"></span>
-            	<button className="">提交</button>
+            	<button className="" onClick={this.handleSubmit.bind(this)}>提交</button>
             </div>
         )
     }

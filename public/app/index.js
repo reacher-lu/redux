@@ -8,18 +8,6 @@ import configureStore from './configureStore'
 const store = configureStore()
 const rootDom = document.getElementById('app')
 
-
-const pageData = {
-    content: [{
-        code: "PageModule",
-        version: 20150101,
-        order: 0,
-        pageTitle: "sds"
-    }]
-}
-
-console.log(store);
-
 function renderDevTools(store) {
     if (__DEBUG__) {
         let {DevTools, DebugPanel, LogMonitor} = require('redux-devtools/lib/react')

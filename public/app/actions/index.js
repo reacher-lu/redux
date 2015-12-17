@@ -1,8 +1,15 @@
-import { TITLE_BLUR, TITLE_KEYDOWN, TITLE_BAR } from '../constants/actionTypes'
+import { TITLE_BLUR, TITLE_KEYDOWN, TITLE_BAR,TITLE_CHANGE } from '../constants/actionTypes'
 
 export function titleBlur(pageTitle) {
     return {
         type: TITLE_BLUR,
+        pageTitle
+    }
+}
+
+export function titleChange(pageTitle) {
+    return {
+        type: TITLE_CHANGE,
         pageTitle
     }
 }
