@@ -1,32 +1,25 @@
-import { ADD_ITEM, DELETE_ITEM, DELETE_ALL, FILTER_ITEM, TITLE_BAR } from '../constants/actionTypes'
+import { TITLE_BLUR, TITLE_KEYDOWN,TITLE_BAR } from '../constants/actionTypes'
 
-export function addItem() {
-    return dispatch => {
-        setTimeout(() => dispatch({type: ADD_ITEM}), 1000)
-    }
-}
-export function deleteItem(item) {
+export function titleBlur(pageTitle) {
+    console.log('xx');
     return {
-        type: DELETE_ITEM,
-        item
-    }
-}
-export function deleteAll() {
-    return {
-        type: DELETE_ALL
-    }
-}
-export function filterItem(e) {
-    let filterItem = e.target.value
-
-    return {
-        type: FILTER_ITEM,
-        filterItem
+        type: TITLE_BLUR,
+        pageTitle
     }
 }
 
-export function titleBar(e) {
+export function titleKeyDown() {
     return {
-        type: TITLE_BAR
+        type: TITLE_KEYDOWN
+    }
+}
+
+export function titleBar(e,x) {
+    console.log('e',e);
+    console.log('x',x);
+    let inputValue = e;
+    return {
+        type: TITLE_BAR,
+        inputValue
     }
 }

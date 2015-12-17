@@ -1,38 +1,39 @@
 import React from 'react'
-import SearchBar from '../components/searchBar'
-import Content from '../components/content'
-import Footer from '../components/footer'
 import TitleBar from '../components/titleBar'
 import { connect } from 'react-redux'
 import ImmutableRenderMixin from 'react-immutable-render-mixin'
 import * as ItemsActions from '../actions'
 import { bindActionCreators } from 'redux'
 
+// import _products from './pageData.json'
+
+// console.log('_products',_products);
+
+// const url = 'mock/pageData.json';
+// fetch(url).then(response => response.json())
+//   .then(data => console.log('data',data))
+//   .catch(e => console.log("Oops, error", e))
+
+
 let App = React.createClass({
     mixins: [ImmutableRenderMixin],
     propTypes: {
-        items: React.PropTypes.object,
-        filter: React.PropTypes.string
+        pageTitle: React.PropTypes.string.isRequired
     },
     render() {
         const actions = this.props.actions
-        console.log('xxxx',this.props);
-
+        const pageData = this.props.pageData
+        console.log('root props',this.props);
         return (
             <div>
-                <h2>Manage Items</h2>
-                <SearchBar filterItem={actions.filterItem}/>
-                <Content items={this.props.items} filter={this.props.filter} deleteItem={actions.deleteItem}/>
-                <Footer addItem={actions.addItem} deleteAll={actions.deleteAll}/>
-                <TitleBar titleBar={actions.titleBar} />
+                <TitleBar pageTitle={this.props.pageTitle} titleBar={actions.titleBar} titleBlur={actions.titleBlur} />
             </div>
         )
     }
 })
 
 export default connect(state => ({
-    items: state.items,
-    filter: state.filter
+    pageTitle : 'xxxxoooo'
 }), dispatch => ({
     actions: bindActionCreators(ItemsActions, dispatch)
 }))(App)
