@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+// 全局定义超链接，标题
+a{
+  color:$a;
+  &:hover{
+    color: $hover;
+  }
+}
+h1{
+  font-family: $font;
+  font-size: 28px;
+  color: $title;
+}
+h2{
+  font-family: $font;
+  font-size: 18px;
+  color: $title;
+  
+}
+h3{
+  font-family: $font;
+  font-size: 14px;
+  color: $title;
+  
+}
+
+.inline {
+  display: inline
+}
+
+body{
+  font-family: $font;
+  font-size: 12px;
+  color: $default;
+}
+
+
+// 主色调
+.text-color{
+  color:$color;
+}
+
+// 重要文字 比如还可以选择多少件商品等等
+.text-important{
+  color:$important;
+}
+
+// 警示文字
+.text-warning{
+  color:$warning;
+}
+
+// 默认内容字体颜色
+.text-default{
+  color:$default;
+}
+
+// 默认标题颜色
+.text-title{
+  color:$title;
+}
+
+// 次级文字
+.text-grey{
+  color:$grey;
+}
+
+// 辅助文字
+.text-tag{
+  color:$tag;
+}
+
+// 提示文字
+.text-remind{
+  color:$remind;
+}
+
+
+

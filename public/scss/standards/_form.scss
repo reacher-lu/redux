@@ -1,0 +1,88 @@
+@charset "utf-8";
+// 正常
+$inputPadding:5px;
+$inputHeight:27px;
+
+$textareaPadding:10px;
+
+.ipt-fa{
+  border:1px solid $hover;
+}
+
+.ipt-normal{
+  box-sizing:border-box;
+  border:1px solid $border;
+  border-radius:3px;
+  font-size:12px;
+  color: $default;
+  margin:0; padding:$inputPadding;
+  height: $inputHeight;
+  box-shadow : 0px 1px 1px #dedede inset;
+  &:focus,&:active{
+    border:1px solid $hover;
+  }
+}
+
+// 错误
+.ipt-error{
+
+}
+
+//textarea
+.ta-normal{
+   white-space: normal;
+   box-sizing:border-box;
+   border-radius: 3px;
+   background-color: white;
+   word-break: break-all;
+   width: 100%;
+   font-size: 12px;
+   border: 1px solid $componentBorder;
+   padding: $textareaPadding - 3px $textareaPadding;
+   &:focus,&:active{
+     border:1px solid $hover;
+   }
+}
+
+
+//搜索框
+
+$searchInputWidth : 200px;
+$searchDefaultHeight : 24px;
+
+.si-normal{
+  background-color: white;
+  input {
+    box-sizing: border-box;
+    border: 1px solid $border;
+    width: $searchInputWidth;
+    padding: 3px 8px;
+    margin: 0px;
+    color: $tag;
+    float: left;
+    height: $searchDefaultHeight;
+  }
+
+  span {
+    background: url("../images/back/search.png") no-repeat center;
+    -webkit-background-size: 18px;
+    background-size: 18px;
+    box-sizing: border-box;
+    border-right: 1px solid $border;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+    @include wh($searchDefaultHeight);
+
+    float: right;
+    cursor: pointer;
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+

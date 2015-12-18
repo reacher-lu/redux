@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+
+// 中文字体
+// $font:'Hiragino Sans GB',Microsoft Yahei,tahoma,arial,sans-serif;
+// $font:'Lantinghei SC', 'Open Sans', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, STHeiti, 'WenQuanYi Micro Hei', SimSun, Helvetica, sans-serif;
+$font: 'Microsoft YaHei','Open Sans', 'Hiragino Sans GB', Arial, STHeiti, 'WenQuanYi Micro Hei', SimSun, Helvetica, sans-serif;
+
+// 数字字体
+$number:arial,"georgia";
+
+
+//color 旧版本颜色 后续合并
+$action:#a9cc4e;
+$red :#f74136;
+
+//标题分割线
+$titleSplitColor:#e1e0e0;
+//标题距离下分割线距离
+$titleBottomPadding:15px;
+//内部分割线
+$innerSplitColor:#ededed;
+
+
+// 主色调   
+$color:#17a6b3;
+$color0x:#e4f8fa;
+$color1x:#c3e7ea;
+$color2x:#0093a0;
+// 重要文字 比如还可以选择多少件商品等等
+$important:#f74136;
+// 警示文字
+$warning:#fd990b;
+
+// 默认内容字体颜色
+$default:#333;
+// 默认标题颜色
+$title:#666;
+
+// 次级文字
+$grey:#666;
+// 辅助文字
+$tag:#999;
+// 提示文字
+$remind:#ccc;
+
+// 超链接
+$a:#1262c4;
+$hover:#17a6b3;
+
+// 删除
+$del:#f74136;
+
+
+// 边框
+$border:#c5c5c5;
+// 浅色边框
+$borderLight:#ededed;
+// 背景
+$bg:#f2f2f2;
+
+//弹出层背景色
+$popupBg1:#f5f5f5;
+$popupBg2:#e6e7eb;
+$popupBorder:#e2e2e2;
+
+//3级模块分割距离
+$innerInterval:10px;
+$outerInterval:20px;
+$sideInterval:20px;
+
+//确认按钮上边距
+$confirmButtonInterval:30px;
+
+//日历控件的高度
+$wdateHeight : 34px;
+
+//链接组件颜色
+$componentBorderLight:#d5dee4;
+$componentBorder:#cbcbcc;

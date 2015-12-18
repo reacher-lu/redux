@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+// 普通按钮
+.btn-normal{
+  @include btn(18px);
+  min-width: 50px;
+  font-size: 12px;
+  border:1px solid $color;
+  color: $default;
+  background-color:#fff;
+  &:hover{
+    background-color:$color;
+    color:#fff;
+  }
+}
+
+
+
+// 按高度，分为20，30，40三种尺寸
+// 按背景色，分为白，浅，深
+// 以上两种从低到高按s,m,l三种区分
+
+
+// 小号，白色
+.btn-ss{
+  @include btn(18px);
+  min-width: 50px;
+  font-size: 12px;
+  border:1px solid $color;
+  color: $color;
+  background-color:transparent;
+  &:hover{
+    background-color:$color;
+    color:#fff;
+  }
+}
+// 小号，浅色
+.btn-sm{
+  @include btn(18px);
+  min-width: 50px;
+  font-size: 12px;
+  border:1px solid $color;
+  color: $color;
+  background-color:$color1x;
+  &:hover{
+    color: #fff;
+    background-color:$color;
+  }
+}
+// 小号，深色
+.btn-sl{
+  @include btn(18px);
+  min-width: 50px;
+  font-size: 12px;
+  border:1px solid $color;
+  color: #fff;
+  background-color:$color;
+  &:hover{
+    background-color:$color2x;
+  }
+}
+
+
+
+
+// 中号，白色
+.btn-ms{
+  @include btn(28px);
+  min-width: 80px;
+  font-size: 14px;
+  border:2px solid $color;
+  color: $color;
+  background-color:transparent;
+  &:hover{
+    background-color:$color;
+    color:#fff;
+  }
+}
+// 中号，浅色
+.btn-mm{
+  @include btn(28px);
+  min-width: 80px;
+  font-size: 14px;
+  border:2px solid $color;
+  color: $color;
+  background-color:$color1x;
+  &:hover{
+    color: #fff;
+    background-color:$color;
+  }
+}
+// 中号，深色
+.btn-ml{
+  @include btn(28px);
+  min-width: 80px;
+  font-size: 14px;
+  border:2px solid $color;
+  color: #fff;
+  background-color:$color;
+  &:hover{
+    background-color:$color2x;
+  }
+}
+
+
+
+// 大号，白色
+.btn-ls{
+  @include btn(38px);
+  min-width: 120px;
+  font-size: 18px;
+  border:2px solid $color;
+  color: $color;
+  background-color:transparent;
+  &:hover{
+    background-color:$color;
+    color:#fff;
+  }
+}
+// 大号，浅色
+.btn-lm{
+  @include btn(38px);
+  min-width: 120px;
+  font-size: 18px;
+  border:2px solid $color;
+  color: $color;
+  background-color:$color1x;
+  &:hover{
+    color: #fff;
+    background-color:$color;
+  }
+}
+// 大号，深色
+.btn-ll{
+  @include btn(38px);
+  min-width: 120px;
+  font-size: 18px;
+  border:2px solid $color;
+  color: #fff;
+  background-color:$color;
+  &:hover{
+    color:#fff;
+    background-color:$color2x;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================以下为旧样式，后续再合并======================== //
+
+.btn{
+  @include gradientBg(#fbfbfb, #f2f2f2); border:1px solid $border;
+  &:hover{
+    @include gradientBg(#f2f2f2, #fbfbfb);
+  }
+}
+
+.btn-default{
+  @extend .btn;
+  min-width: 60px; @include hl(30px); display:inline-block;
+  border-radius:4px; text-align:center; cursor:pointer; font-size:12px;
+}
+
+// 确认按钮
+.btn-confirm{
+  @include wh(140px,40px);
+  line-height: 35px;
+  box-sizing:border-box;
+  border:2px solid #17a6b3;
+  background: #e5f3f4;
+  border-radius:20px;
+  text-align: center;
+  color:#17a6b3;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover{
+    color: #fff;
+    background: #17a6b3;
+  }
+}
+// 按钮失效，变灰
+.disabled{
+  background-color: #999;
+  border-color: #999;
+  &:hover{
+    background-color: #999;
+    border-color: #999;
+  }
+}

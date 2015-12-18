@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+
+@function rem($n){
+  @return ($n/$base_fontsize_640)+rem;
+}
+@function plus($a,$b){
+  @return $a+$b;
+}
+
+@function pxl($n,$mul){
+  @return ($n/$mul)+px!important;
+}
+

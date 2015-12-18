@@ -1,9 +1,8 @@
-import { TITLE_BLUR, TITLE_KEYDOWN, TITLE_BAR,TITLE_CHANGE } from '../constants/actionTypes'
+import { TITLE_BLUR, TITLE_KEYDOWN, TITLE_BAR, TITLE_CHANGE } from '../constants/actionTypes'
 
 export function titleBlur(pageTitle) {
-    return {
-        type: TITLE_BLUR,
-        pageTitle
+    return (dispatch) => {
+        dispatch(titleChange(pageTitle))
     }
 }
 
@@ -14,9 +13,9 @@ export function titleChange(pageTitle) {
     }
 }
 
-export function titleKeyDown() {
-    return {
-        type: TITLE_KEYDOWN
+export function titleKeyDown(pageTitle) {
+    return (dispatch) => {
+        dispatch(titleChange(pageTitle))
     }
 }
 
@@ -28,12 +27,4 @@ export function titleBar(e,x) {
         type: TITLE_BAR,
         inputValue
     }
-}
-
-export function addToCart(productId) {
-  return (dispatch, getState) => {
-    if (getState().products.byId[productId].inventory > 0) {
-      dispatch(addToCartUnsafe(productId))
-    }
-  }
 }

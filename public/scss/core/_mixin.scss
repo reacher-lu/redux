@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+@mixin wh($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin hl($value) {
+  height: $value;
+  line-height: $value + 1px;
+}
+
+@mixin hl2($value) {
+  height: $value;
+  line-height: $value - 1px;
+}
+
+@mixin whl($w, $h: $w, $l: $h) {
+  width: $w;
+  height: $h;
+  line-height: $l;
+}
+
+@mixin gradientBg($f: #f8f8f8, $t: #f2f2f2) {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($f), to($t));
+}
+
+@mixin retinaFix($url1, $url2) {
+  background-image: url($url1);
+  background-image: -webkit-image-set(url($url1) 1x, url($url2) 2x);
+  background-repeat: no-repeat;
+}
+
+@mixin bg($url, $w: 100%, $h: $w) {
+  background: inline-image($url) no-repeat;
+  background-size: $w $h;
+}
+
+@mixin btn($h, $radius: ($h/2)+1) {
+  @include hl($h);
+  padding: 0 $h/4;
+  border-radius: $radius;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: content-box;
+  font-family: $font;
+  cursor: pointer;
+}
+
+@mixin trans($speed: 0.3s, $way: linear, $prototype: all, $delay: 0s) {
+  -webkit-transition: $speed $way $prototype $delay;
+  -moz-transition: $speed $way $prototype $delay;
+  transition: $speed $way $prototype $delay;
+}
+
+@mixin transform($x, $y) {
+  -moz-transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin scale($x, $y: $x) {
+  -moz-transform: scale($x, $y);
+  -webkit-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
+@mixin rotate($x) {
+  -moz-transform: rotate($x);
+  -webkit-transform: rotate($x);
+  transform: rotate($x);
+}
+
+@mixin animate($name, $speed, $way: linear, $count: infinite) {
+  -webkit-animation: $name $speed $count $way;
+  -moz-animation: $name $speed $count $way;
+  animation: $name $speed $count $way;
+}
+
+@mixin icon($bg, $w, $h: $w) {
+  @include wh($w, $h);
+  display: inline-block;
+  // background:url($bg);
+  background: inline-image($bg) no-repeat;
+  background-size: 100% 100%;
+}
+
+@mixin rap() {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin radius($w, $h: $w, $radius: $h/4) {
+  width: $w;
+  height: $h;
+  border-radius: $radius;
+  overflow: hidden;
+  background-clip: padding-box;
+  display: inline-block;
+  text-align: center;
+}
+
+@mixin triangle() {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+}
+
+@mixin flexRatio($i) {
+  -moz-box-flex: $i;
+  -webkit-box-flex: $i;
+  box-flex: $i;
+  flex: $i;
+  -webkit-flex:$i;
+}
+
+@mixin boderBox() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin flexDisplay() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin px($selector, $value) {
+  @media all and (min-width: 640px) {
+    #{$selector} : pxl($value, 1/2);
+  }
+  @media all and (max-width: 639px) and (min-width: 480px) {
+    #{$selector} : pxl($value, 2/3);
+  }
+  @media all and (max-width: 479px) {
+    #{$selector} : pxl($value, 1);
+  }
+}
+
+@mixin middle() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
